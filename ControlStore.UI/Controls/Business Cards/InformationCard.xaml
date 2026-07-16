@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="ControlStore.UI.Controls.InformationCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ControlStore.UI.Controls"
+             mc:Ignorable="d" x:Name="ElementRoot"
+             MinHeight="100" MinWidth="100">
+    <Border Width="{Binding ActualWidth, ElementName=ElementRoot}" Height="{Binding ActualHeight, ElementName=ElementRoot}"
+            Background="{StaticResource ControlStore.Base.MainFund}" BorderBrush="{StaticResource ControlStore.Base.MainBorder}"
+            BorderThickness="1"
+            CornerRadius="10">
+        
+    </Border>
+</UserControl>

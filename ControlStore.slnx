@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ControlStore.UI.Demo/ControlStore.UI.Demo.csproj" />
+  <Project Path="ControlStore.UI/ControlStore.UI.csproj" />
+</Solution>
