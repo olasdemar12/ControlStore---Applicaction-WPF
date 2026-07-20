@@ -16,7 +16,6 @@
   <ItemGroup>
     <Folder Include="Converters\" />
     <Folder Include="Animations\" />
-    <Folder Include="Styles\" />
   </ItemGroup>
 
 </Project>

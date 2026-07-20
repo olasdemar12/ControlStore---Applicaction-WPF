@@ -27,6 +27,7 @@ namespace ControlStore.UI.Demo.MVVM.Menu
                 new ItemOption("Temas"),
                 new ItemOption("Tiprografia"),
                 new ItemOption("Botones"),
+                new ItemOption("Targetas de Información")
 
             };
             this.OptionsMenu = Options;
@@ -44,10 +45,13 @@ namespace ControlStore.UI.Demo.MVVM.Menu
                     ContentPage = Activator.CreateInstance(typeof(ThemesView));
                     break;
                 case "Tiprografia":
-                    MessageBox.Show($"Seleccion: Tiprografia");
+                    ContentPage = Activator.CreateInstance(typeof(TypographyStyles));
                     break;
                 case "Botones":
                     MessageBox.Show($"Seleccion: Botones");
+                    break;
+                case "Targetas de Información":
+                    ContentPage = Activator.CreateInstance(typeof(BusinessCardControl));
                     break;
             }
         }

@@ -56,13 +56,13 @@
 
                     <Border Grid.Column="2" Margin="10" Width="auto" Height="45" CornerRadius="4"
                             Background="{StaticResource ControlStore.Base.MainText}">
-                        <TextBox HorizontalAlignment="Center" VerticalAlignment="Center"
+                        <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"
                         Style="{StaticResource CopyTextStyle}" Text="#172B4D"/>
                     </Border>
 
                     <Border Grid.Column="3" Margin="10" Width="auto" Height="45" CornerRadius="4"
                             Background="{StaticResource ControlStore.Base.SecondaryText}">
-                        <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" 
+                        <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"
                                  Style="{StaticResource CopyTextStyle}" Text="#6B778C"/>
                     </Border>
 

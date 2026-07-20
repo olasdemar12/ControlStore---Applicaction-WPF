@@ -12,6 +12,9 @@
                 <ResourceDictionary
                     Source="pack://application:,,,/ControlStore.UI;component/Themes/ControlStoreTheme.xaml" />
 
+                <ResourceDictionary
+                    Source="/ControlStore.UI;component/Styles/Texto/TextStylesControlStore.xaml" />
+
 
             </ResourceDictionary.MergedDictionaries>
 

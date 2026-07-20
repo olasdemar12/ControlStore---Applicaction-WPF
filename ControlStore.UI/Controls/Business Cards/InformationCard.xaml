@@ -4,12 +4,114 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ControlStore.UI.Controls"
-             mc:Ignorable="d" x:Name="ElementRoot"
-             MinHeight="100" MinWidth="100">
-    <Border Width="{Binding ActualWidth, ElementName=ElementRoot}" Height="{Binding ActualHeight, ElementName=ElementRoot}"
-            Background="{StaticResource ControlStore.Base.MainFund}" BorderBrush="{StaticResource ControlStore.Base.MainBorder}"
-            BorderThickness="1"
-            CornerRadius="10">
-        
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" x:Name="Root"
+             MinWidth="320" MinHeight="180">
+    <Border Width="{Binding ActualWidth, ElementName=Root}" Height="{Binding ActualHeight, ElementName=Root}" 
+            BorderThickness="1" CornerRadius="10"
+            Background="{StaticResource ControlStore.Base.MainFund}" 
+            BorderBrush="{StaticResource ControlStore.Base.MainBorder}">
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="320" MaxHeight="180" RenderTransformOrigin="0.5,0.5">
+
+            <Grid.RenderTransform>
+                <ScaleTransform ScaleX="{Binding ScaleInformation, ElementName=Root}" ScaleY="{Binding ScaleInformation, ElementName=Root}"/>
+            </Grid.RenderTransform>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Width="50" Height="{Binding Width, RelativeSource={RelativeSource Self}}"
+                   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0"
+                   Background="{StaticResource ControlStore.Action.SoftBlue}"
+                   CornerRadius="10">
+                <materialDesign:PackIcon Kind="{Binding Icon,ElementName=Root}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                        Foreground="{StaticResource ControlStore.Action.MainBlue}"
+                                        Height="auto" Width="auto" Margin="10"/>
+            </Border>
+
+            <TextBlock Grid.Row="1" Text="{Binding TitleText,ElementName=Root}" FontWeight="SemiBold" Style="{StaticResource PrimaryText}"
+                      HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0" FontSize="22" TextWrapping="Wrap"/>
+
+            <TextBlock Grid.Row="2" Text="{Binding DescriptionText,ElementName=Root}"
+                      TextWrapping="Wrap" Style="{StaticResource SecondaryText}"
+                      HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0" FontSize="16"/>
+        </Grid>
+
+        <Border.Effect>
+            <DropShadowEffect
+            Color="#DEEBFF"
+            BlurRadius="0"
+            ShadowDepth="0"
+            Opacity="0"/>
+        </Border.Effect>
+
+        <Border.Style>
+            <Style TargetType="Border">
+                <Style.Triggers>
+
+                    <!-- Al colocar el cursor -->
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)"
+                                    To="10"
+                                    Duration="0:0:0.25">
+
+                                    <DoubleAnimation.EasingFunction>
+                                        <CubicEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+
+                                <DoubleAnimation
+                        Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)"
+                        To="0.65"
+                        Duration="0:0:0.25"/>
+
+                                <ColorAnimation
+                                Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+                                To="#0052CC"
+                                Duration="0:0:0.25"/>
+                                
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+
+                    <!-- Al retirar el cursor -->
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)"
+                                    To="0"
+                                    Duration="0:0:0.25">
+                                    
+                                    <DoubleAnimation.EasingFunction>
+                                        <CubicEase EasingMode="EaseIn"/>
+                                    </DoubleAnimation.EasingFunction>
+                                    
+                                </DoubleAnimation>
+
+                                <DoubleAnimation
+                        Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)"
+                        To="0"
+                        Duration="0:0:0.25"/>
+
+                                <ColorAnimation
+                                Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+                                To="#DFE1E6"
+                                Duration="0:0:0.25"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
     </Border>
 </UserControl>

@@ -6,9 +6,19 @@
       xmlns:local="clr-namespace:ControlStore.UI.Demo.UI.Menu_Main"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="TypographyStyles">
+      Title="TypographyStyles" Background="White">
 
     <Grid>
+
+        <StackPanel HorizontalAlignment="Center">
+
+            <TextBlock Style="{StaticResource PrimaryText}" Text="Texto Principal" FontSize="30" Margin="10"/>
+
+            <TextBlock Style="{StaticResource SecondaryText}" Text="Texto Secundario" FontSize="30" Margin="10"/>
+
+            <TextBlock Style="{StaticResource TertiaryText}" Text="Texto Terciario..." FontSize="30" Margin="10"/>
+
+        </StackPanel>
         
     </Grid>
 </Page>
