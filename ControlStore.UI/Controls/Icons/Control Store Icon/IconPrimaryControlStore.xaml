@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="ControlStore.UI.Controls.IconPrimaryControlStore"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ControlStore.UI.Controls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" Width="180" Height="50" x:Name="Root">
+    <Grid MinWidth="180" MinHeight="50" Width="180" Height="50" MaxWidth="180" MaxHeight="50"
+          RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <ScaleTransform ScaleX="{Binding IconSize,ElementName=Root}" ScaleY="{Binding IconSize,ElementName=Root}"/>
+        </Grid.RenderTransform>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" Source="/ControlStore.UI;component/Controls/Icons/Control Store Icon/Assets/ControlStore_AppIcon_256_transparente.png" 
+               Width="50" Height="50" Stretch="Uniform"/>
+        <TextBlock Grid.Column="1" FontSize="18" VerticalAlignment="Center" Margin="0,0,0,0">
+            <Run Text="Control" FontWeight="Bold" Foreground="{StaticResource ControlStore.Base.MainText}"/>
+            <Run Text="Store" FontWeight="Bold" Foreground="{StaticResource ControlStore.Action.MainBlue}"/>
+        </TextBlock>
+    </Grid>
+</UserControl>

@@ -15,6 +15,9 @@
                 <ResourceDictionary
                     Source="/ControlStore.UI;component/Styles/Texto/TextStylesControlStore.xaml" />
 
+                <ResourceDictionary 
+                    Source="/ControlStore.UI;component/Styles/Buttons/Main Buttons/MainButtonStyles.xaml" />
+
 
             </ResourceDictionary.MergedDictionaries>
 
