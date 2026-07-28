@@ -1,4 +1,9 @@
 <Solution>
+  <Project Path="ControlStore.Application.Tests/ControlStore.Application.Tests.csproj" Id="69305ad9-b069-461f-bf32-5882d8289822" />
+  <Project Path="ControlStore.ApplicationServices/ControlStore.ApplicationServices.csproj" Id="62bb974a-09ef-49a8-8532-dfc1f29bc2d8" />
+  <Project Path="ControlStore.Desktop/ControlStore.Desktop.csproj" Id="ca18f1db-6203-4915-b545-b5ad4a7b9869" />
+  <Project Path="ControlStore.Domain/ControlStore.Domain.csproj" Id="7179995d-b18d-4de2-b592-1cc599ebd783" />
+  <Project Path="ControlStore.Infrastructure/ControlStore.Infrastructure.csproj" Id="193e1e36-fa12-4928-a918-ef73e99dcce6" />
   <Project Path="ControlStore.UI.Demo/ControlStore.UI.Demo.csproj" />
   <Project Path="ControlStore.UI/ControlStore.UI.csproj" />
 </Solution>
