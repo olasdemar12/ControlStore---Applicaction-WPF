@@ -1,5 +1,4 @@
-﻿using ControlStore.Desktop.ServicesDesktop.Properties.StateDesktop.SettingsDesktop;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration.Binder;
@@ -9,6 +8,7 @@ using System.IO;
 using System.Text.Json;
 using System.Windows;
 using HostController = Microsoft.Extensions.Hosting.Host;
+using ControlStore.Desktop.State;
 
 namespace ControlStore.Desktop.ServicesDesktop.Host
 {

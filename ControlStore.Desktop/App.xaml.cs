@@ -1,5 +1,5 @@
 ﻿using ControlStore.Desktop.ServicesDesktop.Host;
-using ControlStore.Desktop.ServicesDesktop.Properties.StateDesktop.SettingsDesktop;
+using ControlStore.Desktop.State;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -31,10 +31,16 @@ namespace ControlStore.Desktop
             var settings = _host.Services.GetRequiredService<ApplicationSettings>();
             Window startupWindow;
 
-            // Motor de Enrutamiento Basado en el Estado
-            if (settings.OperationMode == OperationModeSetting.None)
+            //Verificacion del estado de la aplicacion para determinar que ventana mostrar
+            if (settings.StateApp == DesktopState.Start)
             {
-                MessageBox.Show("No se Configuro el modo de operacion");
+                //Mostramos los objetivos del sistema
+                startupWindow = _host.Services.GetRequiredService<MainWindow>();
+            }
+            else
+            {
+                //Mostramos la ventana de preparando todo
+                MessageBox.Show("La aplicación ya ha sido configurada. Se mostrará la ventana de preparación.", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
             }
 
             startupWindow = _host.Services.GetRequiredService<MainWindow>();

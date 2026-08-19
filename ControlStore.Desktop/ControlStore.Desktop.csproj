@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.10" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.10" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.10" />
@@ -18,6 +19,10 @@
     <ProjectReference Include="..\ControlStore.Domain\ControlStore.Domain.csproj" />
     <ProjectReference Include="..\ControlStore.Infrastructure\ControlStore.Infrastructure.csproj" />
     <ProjectReference Include="..\ControlStore.UI\ControlStore.UI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Bootstrap\" />
   </ItemGroup>
 
 </Project>

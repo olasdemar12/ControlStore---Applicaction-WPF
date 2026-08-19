@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ControlStore.Desktop.ServicesDesktop.Properties.StateDesktop.SettingsDesktop
+namespace ControlStore.Desktop.State
 {
     public enum DesktopState
     {

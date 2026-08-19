@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using ControlStore.Desktop.Features.Startup.Views;
+using System.Configuration;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,6 +21,13 @@ namespace ControlStore.Desktop
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var OperatiionModeView = new OperationModeSelectionView();
+            OperatiionModeView.Show();
+            this.Close();
         }
     }
 }
