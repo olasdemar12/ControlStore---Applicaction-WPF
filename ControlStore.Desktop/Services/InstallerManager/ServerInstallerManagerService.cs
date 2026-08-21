@@ -21,24 +21,43 @@ namespace ControlStore.Desktop.Services.InstallerManager
 
             try
             {
-                // 2. Crear el servicio y configurarlo como Automático
-                // Nota: Los espacios después del "=" en binPath y start son obligatorios para el comando 'sc'
-                string createArgs = $"create \"{_serviceName}\" binPath= \"{apiExePath}\" start= auto";
-                EjecutarComandoComandos(createArgs);
+                // Unimos ambos comandos (create y start) usando "&&" para que se ejecuten uno tras otro
+                string comandos = $"sc create \"{_serviceName}\" binPath= \"{apiExePath}\" start= auto && sc start \"{_serviceName}\"";
 
-                // 3. Iniciar el servicio
-                string startArgs = $"start \"{_serviceName}\"";
-                EjecutarComandoComandos(startArgs);
+                ProcessStartInfo processInfo = new ProcessStartInfo
+                {
+                    FileName = "cmd.exe",
+                    Arguments = $"/c {comandos}",
+                    UseShellExecute = true,       // Obligatorio para poder pedir permisos
+                    Verb = "runas",               // ESTO ES LO QUE LANZA LA VENTANA DE ADMINISTRADOR
+                    WindowStyle = ProcessWindowStyle.Hidden, // Evita que se vea la consola negra
+                    CreateNoWindow = true
+                };
 
-                // 4. Darle tiempo a la API para que arranque completamente y cree la Base de Datos
-                Thread.Sleep(5000);
+                using (Process process = Process.Start(processInfo))
+                {
+                    process.WaitForExit();
 
+                    // Si el proceso no es 0, algo falló internamente (el usuario puede ver los logs de windows)
+                    if (process.ExitCode != 0)
+                    {
+                        // Nota: Al usar UseShellExecute=true no podemos leer el error exacto (StandardError),
+                        // pero sabemos que no fue exitoso.
+                        return false;
+                    }
+                }
+                MessageBox.Show("La Api fue preparada con exito", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
                 return true;
+            }
+            catch (System.ComponentModel.Win32Exception)
+            {
+                // Esta excepción específica ocurre si el usuario presiona "NO" en la ventana de permisos
+                MessageBox.Show("El usuario canceló la solicitud de permisos de Administrador.");
+                return false;
             }
             catch (Exception ex)
             {
-                // Aquí puedes mandar el error a tu log o mostrar un MessageBox
-                MessageBox.Show($"Error al instalar el servicio: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error inesperado: {ex.Message}");
                 return false;
             }
         }

@@ -1,8 +1,12 @@
-var builder = WebApplication.CreateBuilder(args);
-// 👇 AGREGA ESTA LÍNEA 👇
-// Esto le dice a la API que, si es iniciada por Windows, actúe como Servicio.
-// Si la inicias tú con F5 en Visual Studio, lo ignorará y correrá normal en consola.
-builder.Services.AddWindowsService(options =>
+var options = new WebApplicationOptions
+{
+    Args = args,
+    ContentRootPath = AppContext.BaseDirectory
+};
+
+var builder = WebApplication.CreateBuilder(options);
+
+builder.Host.UseWindowsService(options =>
 {
     options.ServiceName = "ControlStore.Server.Api"; // El mismo nombre que pusiste en el WPF
 });

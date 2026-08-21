@@ -62,6 +62,14 @@ namespace ControlStore.Desktop.Features.Startup.ViewModels.OperationModeSelectio
                 // Ahora sí llamamos al instalador
                 var installer = new ServerInstallerManagerService();
                 bool exito = installer.InstalarEIniciarServidor(rutaApi);
+                if(exito)
+                {
+                    _actionClose?.Invoke();
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al intentar instalar e iniciar el servidor. Por favor, verifica que el archivo .exe exista y que tengas los permisos necesarios.");
+                }
             }
             else
             {
