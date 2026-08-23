@@ -5,10 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ControlStore.Desktop"
         xmlns:controls="clr-namespace:ControlStore.UI.Controls;assembly=ControlStore.UI"
-        WindowStyle="None"
-        WindowState="Maximized"
-        ResizeMode="NoResize"
-        Background="White">
+        Style="{StaticResource WindowsFloatingStyle}"
+        WindowStartupLocation="CenterScreen">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
         <Grid.RowDefinitions>
@@ -19,9 +17,9 @@
         </Grid.RowDefinitions>
 
         <!--Logotipo de Control Store-->
-        <controls:IconPrimaryControlStore Grid.Row="0" Margin="100,30,0,30" IconSize="2" HorizontalAlignment="Left"/>
+        <controls:IconPrimaryControlStore Grid.Row="0" Margin="130,50,0,30" IconSize="2" HorizontalAlignment="Left"/>
         <!--Sub titulo: "objetivos principales"-->
-        <TextBlock Text="Objetivos Principales." Grid.Row="1" Margin="20,0,0,30" Style="{StaticResource PrimaryText}" FontSize="30"/>
+        <TextBlock Text="Objetivos Principales." Grid.Row="1" Margin="40,0,0,30" Style="{StaticResource PrimaryText}" FontSize="30"/>
         <!--Contenido principal-->
         <Grid Grid.Row="2" Margin="30,0,30,30">
             <!--Filas-->
@@ -38,29 +36,29 @@
             
             <!--Contenido de la Fila 1 -->
 
-            <controls:InformationCard Grid.Row="0" Grid.Column="0" Margin="10" ScaleInformation="1.5"
+            <controls:InformationCard Grid.Row="0" Grid.Column="0" Margin="10" ScaleInformation="1"
                                       Icon="ABCOff" TitleText="Control de Productos"
                                       DescriptionText="Registrar, editar, consultar y desacticvar productos fácilmente en el catálogo."/>
 
-            <controls:InformationCard Grid.Row="0" Grid.Column="1" Margin="10" ScaleInformation="1.5"
+            <controls:InformationCard Grid.Row="0" Grid.Column="1" Margin="10" ScaleInformation="1"
                                       Icon="ABCOff" TitleText="Gestionar inventario"
                                       DescriptionText="Administrar eficientemente las existencias tanto en almacén como en piso de venta."/>
 
-            <controls:InformationCard Grid.Row="0" Grid.Column="2" Margin="10" ScaleInformation="1.5"
+            <controls:InformationCard Grid.Row="0" Grid.Column="2" Margin="10" ScaleInformation="1"
                                       Icon="ABCOff" TitleText="Registrar ventas"
                                       DescriptionText="Llevar el control total de ventas, aperturas de cajas y movimientos relacionados."/>
 
             <!--Contenido de la Fila 2 -->
 
-            <controls:InformationCard Grid.Row="1" Grid.Column="0" Margin="10" ScaleInformation="1.4"
+            <controls:InformationCard Grid.Row="1" Grid.Column="0" Margin="10" ScaleInformation="1"
                                       Icon="ABCOff" TitleText="Administrar usuarios"
                                       DescriptionText="Definir accesos de forma segura y granular según el rol de cada usuario."/>
 
-            <controls:InformationCard Grid.Row="1" Grid.Column="1" Margin="10" ScaleInformation="1.4"
+            <controls:InformationCard Grid.Row="1" Grid.Column="1" Margin="10" ScaleInformation="1"
                                       Icon="ABCOff" TitleText="Generar reportes"
                                       DescriptionText="Ofrecer información precisa, exportable y útil para la toma de decisiones."/>
 
-            <controls:InformationCard Grid.Row="1" Grid.Column="2" Margin="10" ScaleInformation="1.4"
+            <controls:InformationCard Grid.Row="1" Grid.Column="2" Margin="10" ScaleInformation="1"
                                       Icon="ABCOff" TitleText="Centralizar operación"
                                       DescriptionText="Conectar los módulos principales del negocio en un solo ecosistema integral."/>
         </Grid>

@@ -16,6 +16,9 @@
 
                 <ResourceDictionary 
                 Source="/ControlStore.UI;component/Styles/Buttons/Main Buttons/MainButtonStyles.xaml" />
+                
+                <ResourceDictionary                 
+                Source="/ControlStore.UI;component/Styles/Windows/WindowStyles.xaml" />
 
 
             </ResourceDictionary.MergedDictionaries>

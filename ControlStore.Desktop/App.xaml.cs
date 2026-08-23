@@ -31,20 +31,21 @@ namespace ControlStore.Desktop
             var settings = _host.Services.GetRequiredService<ApplicationSettings>();
             Window startupWindow;
 
-            //Verificacion del estado de la aplicacion para determinar que ventana mostrar
+
             if (settings.StateApp == DesktopState.Start)
             {
-                //Mostramos los objetivos del sistema
+                if(settings.OperationMode != OperationModeSetting.None)
+                {
+                    MessageBox.Show("Realizando PROCESO de Inicio del Servicio - ControlStore.Server.Api");
+                    return;
+                }
                 startupWindow = _host.Services.GetRequiredService<MainWindow>();
+                startupWindow.Show();
             }
             else
             {
-                //Mostramos la ventana de preparando todo
                 MessageBox.Show("La aplicación ya ha sido configurada. Se mostrará la ventana de preparación.", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-
-            startupWindow = _host.Services.GetRequiredService<MainWindow>();
-            startupWindow.Show();
             base.OnStartup(e);
         }
 

@@ -21,6 +21,8 @@ namespace ControlStore.Desktop.Features.Startup.Views
         public OperationModeSelectionView()
         {
             InitializeComponent();
+            Width = SystemParameters.PrimaryScreenWidth * 0.8;
+            Height = SystemParameters.PrimaryScreenHeight * 0.8;
             var closeWindow = () => { 
                 //Abrir una ventana antes de cerrar la actual:
 
@@ -28,9 +30,14 @@ namespace ControlStore.Desktop.Features.Startup.Views
             this.DataContext = new OperationModeSelectionViewModel(closeWindow);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void CloseButtonAction(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
 
+        private void MinimizeButtonAction(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 }

@@ -21,6 +21,13 @@ namespace ControlStore.Desktop
         public MainWindow()
         {
             InitializeComponent();
+
+            Width = SystemParameters.PrimaryScreenWidth * 0.8;
+            Height = SystemParameters.PrimaryScreenHeight * 0.8;
+
+            ResizeMode = ResizeMode.NoResize;
+
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
