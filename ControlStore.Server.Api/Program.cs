@@ -1,3 +1,6 @@
+using ControlStore.Server.Api.Extensions.Initialize;
+using ControlStore.Server.Api.Middleware.Initialize;
+
 var options = new WebApplicationOptions
 {
     Args = args,
@@ -5,17 +8,15 @@ var options = new WebApplicationOptions
 };
 
 var builder = WebApplication.CreateBuilder(options);
-
 builder.Host.UseWindowsService(options =>
 {
-    options.ServiceName = "ControlStore.Server.Api"; // El mismo nombre que pusiste en el WPF
+    options.ServiceName = "ControlStore.Server.Api";
 });
-
+builder.Services.AddInitializeServices();
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
-
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -24,6 +25,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware<StatusFilesInitializeMiddleware>();
 
 app.MapControllers();
 

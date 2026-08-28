@@ -14,10 +14,7 @@
   <ItemGroup>
     <Folder Include="Hubs\" />
     <Folder Include="Configuration\" />
-	<Folder Include="Configuration\" />	  
-    <Folder Include="Middleware\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Services\" />
+	<Folder Include="Configuration\" />
   </ItemGroup>
 
 </Project>
