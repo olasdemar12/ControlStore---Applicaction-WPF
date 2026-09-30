@@ -1,0 +1,29 @@
+﻿<Application x:Class="ControlStore.Desktop.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ControlStore.Desktop">
+    <Application.Resources>
+
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary
+                Source="pack://application:,,,/ControlStore.UI;component/Themes/ControlStoreTheme.xaml" />
+
+                <ResourceDictionary
+                Source="/ControlStore.UI;component/Styles/Texto/TextStylesControlStore.xaml" />
+
+                <ResourceDictionary 
+                Source="/ControlStore.UI;component/Styles/Buttons/Main Buttons/MainButtonStyles.xaml" />
+                
+                <ResourceDictionary                 
+                Source="/ControlStore.UI;component/Styles/Windows/WindowStyles.xaml" />
+
+
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

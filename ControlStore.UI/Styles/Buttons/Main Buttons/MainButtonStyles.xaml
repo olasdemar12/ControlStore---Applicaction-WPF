@@ -54,6 +54,13 @@
 
                     <ControlTemplate.Triggers>
                         
+                        <!--Propiedades cuando el boton esta deshabilitado-->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource ControlStore.Base.SecondaryFund}"/>
+                            <Setter Property="Foreground" Value="{StaticResource ControlStore.Base.MainBorder}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource ControlStore.Base.MainBorder}"/>
+                        </Trigger>
+
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="InnerBorder" Property="Background" Value="{StaticResource ControlStore.Action.InteractiveBlue}"/>
                         </Trigger>
@@ -121,7 +128,6 @@
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
-
 
                         <Trigger Property="IsPressed" Value="True">
                             <!-- Al Presionar el Boton-->

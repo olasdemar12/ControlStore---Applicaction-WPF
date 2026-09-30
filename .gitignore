@@ -1,5 +1,128 @@
+# ============================================================
+# Control Store - Visual Studio / .NET / WPF / ASP.NET Core
+# ============================================================
+
+# Visual Studio: caché y configuración específica del usuario
 .vs/
-bin/
-obj/
-*.user
+*.rsuser
 *.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Resultados de compilación de .NET
+[Bb]in/
+[Oo]bj/
+[Aa]rtifacts/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Ll]og/
+[Ll]ogs/
+*.binlog
+
+# Archivos generados por Visual Studio y MSBuild
+Generated\ Files/
+*.cache
+*.tlog
+*.lastbuildstate
+
+# Pruebas, cobertura y benchmarks
+[Tt]est[Rr]esult*/
+*.trx
+*.coverage
+*.coveragexml
+coverage/
+coverage-results/
+coverage*.json
+coverage*.xml
+coverage*.info
+BenchmarkDotNet.Artifacts/
+
+# Paquetes NuGet generados o restaurados localmente
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+!**/[Pp]ackages/build/**
+*.nuget.props
+*.nuget.targets
+
+# Publicación, ClickOnce, MSIX e instaladores
+publish/
+PublishOutput/
+AppPackages/
+BundleArtifacts/
+_pkginfo.txt
+*.[Pp]ublish.xml
+*.pubxml
+*.pubxml.user
+*.publishproj
+*.appx
+*.appxbundle
+*.appxupload
+*.msi
+*.msix
+*.msm
+*.msp
+*.cab
+
+# Base de datos SQLite generada durante la ejecución
+# El esquema y los datos iniciales deben guardarse como scripts o código.
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+
+# Configuración local, variables de entorno y secretos
+.env
+.env.*
+!.env.example
+appsettings.Local.json
+appsettings.*.Local.json
+secrets.json
+*.pfx
+*.p12
+*.publishsettings
+
+# Herramientas de análisis y extensiones de IDE
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.sonarqube/
+
+# Historial local del IDE
+**/.localhistory/
+.vshistory/
+.history/
+
+# Archivos temporales y respaldos
+*.tmp
+*.temp
+*.bak
+*.orig
+~$*
+*~
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini

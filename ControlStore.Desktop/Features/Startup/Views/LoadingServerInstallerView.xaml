@@ -1,0 +1,52 @@
+﻿<Window x:Class="ControlStore.Desktop.Features.Startup.Views.LoadingServerInstallerView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControlStore.Desktop.Features.Startup.Views"
+        xmlns:controls="clr-namespace:ControlStore.UI.Controls;assembly=ControlStore.UI"
+        xmlns:vm="clr-namespace:ControlStore.Desktop.Features.Startup.ViewModels.LoadingServerInstaller"
+        d:DataContext="{d:DesignInstance Type=vm:LoadingServerInstallerViewModel,IsDesignTimeCreatable=False}"
+        mc:Ignorable="d"
+        Style="{StaticResource WindowsFloatingStyle}"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Logotipo de Control Store-->
+        <controls:IconPrimaryControlStore Grid.Row="0" Grid.Column="0" Margin="130,50,0,30" IconSize="2" HorizontalAlignment="Left"/>
+
+        <StackPanel Grid.Row="1" Grid.RowSpan="5" Grid.Column="0" Margin="30,80,0,0">
+
+            <!--Sub titulo: "objetivos principales"-->
+            <TextBlock Text="Configurando Servidor." Margin="20,50,0,0" Style="{StaticResource PrimaryText}" FontSize="35"/>
+
+            <!--Encabezado: "mensaje importante para el usuario."-->
+            <TextBlock Text="Porfavor mantenga el equipo encendido para completar la instalación." Margin="20,30,0,0" 
+                   Style="{StaticResource SecondaryText}" FontSize="24" TextWrapping="Wrap"/>
+
+            <!--Barra de progreso-->
+            <ProgressBar Margin="20,30,0,0" Height="20" Value="{Binding Progress}"/>
+
+            <!--Texto de Progreso-->
+            <TextBlock Text="{Binding MessageIndicationProgress}" Margin="20,30,0,0" Style="{StaticResource TertiaryText}" FontSize="24"/>
+
+        </StackPanel>
+
+
+        <Border Background="Blue" Grid.Row="1" Grid.RowSpan="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                CornerRadius="10" Margin="20" Width="600" Height="600"/>
+
+    </Grid>
+</Window>

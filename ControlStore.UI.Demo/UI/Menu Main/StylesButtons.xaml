@@ -4,12 +4,13 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ControlStore.UI.Demo.UI.Menu_Main"
+      xmlns:controls="clr-namespace:ControlStore.UI.Controls;assembly=ControlStore.UI"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="StylesButtons" Background="White">
 
     <StackPanel HorizontalAlignment="Center">
-        
+
         <!-- Botones Principales -->
         <TextBlock Style="{StaticResource PrimaryText}" Text="Botones Principales" FontSize="30" Margin="10" HorizontalAlignment="Center"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -19,5 +20,13 @@
             <Button Style="{StaticResource DestructiveButtonStyle}" Width="200" Height="50" Content="Texto Boton"/>
         </StackPanel>
 
+        <!--Botones + Iconos-->
+        <TextBlock Style="{StaticResource PrimaryText}" Text="Botones de texto más icono" FontSize="30" Margin="10" HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <controls:ButtonIconText IconButton="Plus" StyleButton="{StaticResource PrimaryButtonStyle}" Margin="10"/>
+            <controls:ButtonIconText IconButton="Minus" StyleButton="{StaticResource SecondaryButtonStyle}" Margin="10"/>
+            <controls:ButtonIconText IconButton="Edit" StyleButton="{StaticResource TertiaryButtonStyle}" Margin="10"/>
+            <controls:ButtonIconText IconButton="Delete" StyleButton="{StaticResource DestructiveButtonStyle}" Margin="10"/>
+        </StackPanel>
     </StackPanel>
 </Page>
